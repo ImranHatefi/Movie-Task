@@ -229,9 +229,9 @@ function addBasket(e) {
   let currentFilm = movies.find((item) => item.id === e);
 // hal hazirki film cagirilir 
   let newBalance =
-   ( myBalance - currentFilm.price >= 0
+   myBalance - currentFilm.price >= 0
       ? myBalance - currentFilm.price
-      : myBalance).toFixed(2);
+      : myBalance;
 
 //yeni balance = eger balans - gilm qiymeti boyukdurse 0 dan cixilir deyilse balans oldugu kimi qayidir 
 
@@ -323,7 +323,7 @@ function removecartp(x) {
     setOne("basket", newImran);
   }
   // eger cartda film sayisi 1 dirse film cart arr sinden silinir filter vasitesile  
-  let newBalance = (curretBalance + currentmovie.price).toFixed(2);
+  let newBalance = curretBalance + currentmovie.price;
   setOne("balance", newBalance);
   // film silineneden sonra balans deyisir silinen filmin qiymeti elave olunur 
   let defaultMoney = getLocal("balance");
